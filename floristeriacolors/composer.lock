@@ -23,6 +23,11 @@
             "require": {
                 "php": ">=5.3.2"
             },
+            {
+            "require" : {
+                "epayco/epayco-php" : "dev-master"
+              }
+            },
             "require-dev": {
                 "phpunit/phpunit": "@stable"
             },

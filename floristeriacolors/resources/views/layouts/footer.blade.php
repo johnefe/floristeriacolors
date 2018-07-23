@@ -8,7 +8,7 @@
                             <h6>Contáctanos</h6>
                             <ul>
                                 
-                                <li>Nuestro email: <a href="#">Floristeriacolors@gmail.com</a></li>
+                                <li>Nuestro email: <a href="#">rosasdonvictorio@gmail.com</a></li>
                                 <li>
                                     <a href="#" class="fb" > <span class="fa fa-facebook-official fa-3x"></span> </a>
                                     <a href="#" class="insta" > <span class="fa fa-instagram fa-3x"></span> </a>

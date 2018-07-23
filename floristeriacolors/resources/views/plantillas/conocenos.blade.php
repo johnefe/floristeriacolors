@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-8 col-md-offset-2">
                 <p>
-                    Si está pensando enviar regalos, <strong>Floristería Colors</strong> es tú mejor elección. Ofrecemos regalos, arreglos florales, cajas de rosas y otros tipos de flores que son entregados a domicilio en fechas especiales como el día del amor y la amistad, día de la mujer, día de la madre, día del padre, navidad, cumpleaños, aniversarios, nacimientos, condolencias o cualquier otra ocasión.
+                    Si está pensando enviar regalos, <strong>Rosas Don Victorio</strong> es tú mejor elección. Ofrecemos regalos, arreglos florales, cajas de rosas y otros tipos de flores que son entregados a domicilio en fechas especiales como el día del amor y la amistad, día de la mujer, día de la madre, día del padre, navidad, cumpleaños, aniversarios, nacimientos, condolencias o cualquier otra ocasión.
 
 
                 </p>

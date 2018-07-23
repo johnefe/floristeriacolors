@@ -58,24 +58,33 @@
                 </div>
                 <div class="col-md-8 col-md-offset-2">
                     <div class="radio">
-                        <h4>Acumularas <strong>5500 puntos</strong> por esta Compra</h4>
+                        <!--<h4>Acumularas <strong>5500 puntos</strong> por esta Compra</h4>-->
                     </div>
                 </div>
-                <div class="col-md-12 text-center">
+                <!--<div class="col-md-12 text-center">
                      <h4> Aceptamos pagos con tarjeta de crédito o debito </h4>
-                </div>
+                </div>-->
                 <div class="col-md-10 col-md-offset-1 text-center">
                    
-                    <img src="\img\pasgos.png" class="img-responsive">
+                   <!-- <img src="\img\pasgos.png" class="img-responsive">-->
+                   <form>
+                        <script
+                            src="https://checkout.epayco.co/checkout.js"
+                            class="epayco-button"
+                            data-epayco-key="c14bb0689238c33210b1f334ebfff74d"
+                            data-epayco-amount="50000"
+                            data-epayco-name="Producto(s) seleccionado(s)"
+                            data-epayco-description="Producto(s) seleccionado(s)"
+                            data-epayco-currency="cop"
+                            data-epayco-country="co"
+                            data-epayco-test="true"
+                            data-epayco-external="true"
+                            data-epayco-response="http://127.0.0.1:8000/cuentaUsuario"
+                            data-epayco-confirmation="http://127.0.0.1:8000/cuentaUsuario">
+                        </script>
+                    </form>
                 </div> 
-                @php 
-               // $time = strtotime($dataCart["fechaEntrega"]);
-               // $newformat = date('Y-m-d',$time);
-              //  echo $dataCart["fechaEntrega"];
-               // echo $newformat;
-              //  echo $time;
-
-                @endphp     
+                 
                              
                 
                             

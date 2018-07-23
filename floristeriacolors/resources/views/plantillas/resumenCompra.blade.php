@@ -12,7 +12,7 @@
             
             <!--datos comrador -->
                 <div class="date-comprador col-md-12">
-                <h4>1. Datos del comprador.</h4>
+                <h4>1. Datos de quien envía.</h4>
                 @if($cliente)
                 <div class="row">
                     <div class="col-md-12 ">
@@ -964,7 +964,7 @@ document.getElementById("car").innerHTML="";
 
 function verificarDatos(){
     var ok = true;
-    var msg = "faltan datos por escribir. Completalos:\n";
+    var msg = "faltan datos por escribir.\n";
 
     var nombresComprador = document.getElementById("nombresComprador").value;
     var apellidosComprador = document.getElementById("apellidosComprador").value;
@@ -981,7 +981,6 @@ function verificarDatos(){
 
     if (nombresComprador=="" || apellidosComprador=="" || identificacionComprador=="" || celularComprador=="") {
 
-        
            // mensajeDatos();
            ok = false;
     }

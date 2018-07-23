@@ -15,7 +15,7 @@
             <div class="col-md-8 col-md-offset-2 landmarkit">
                 <h3>Punto de Referencia</h3>
                 <div class="col-md-4">
-                    <h5>Floristeria Colors</h5>
+                    <h5>Rosas Don Victorio</h5>
                     <h5>{{$data->direccion}}</h5>
                     <h5>{{$data->ciudad}}</h5>
                     
