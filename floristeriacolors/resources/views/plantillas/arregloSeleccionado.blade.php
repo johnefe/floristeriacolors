@@ -81,9 +81,9 @@
                     <p class="text-cantidad">Cantidad:</p> 
                     <input type="number" step="1" min="0"  id="cantidadProducto" name="quantity" value="1" title="Cantidad" class="input-text qty text" size="4" />
                 </div>
-                 <div class="cantidad-arreglo">
-                    <p class="text-cantidad">Tamaño:</p> 
-                    {!!Form::select('selectTamaño',$producto->prices->pluck('tamaño','precio'),null,['class'=>'tamaño-arreglo','id'=>'selectTamaño', 'onchange'=> 'changeFunc();'])!!} 
+                 <div class="cantidad-arreglo"  style="color: #000;">
+                    <p class="text-cantidad" style="color: #000;">Tamaño:</p> 
+                    {!!Form::select('selectTamaño',$producto->prices->pluck('tamano','precio'),null,['class'=>'tamaño-arreglo','id'=>'selectTamaño', 'onchange'=> 'changeFunc();'])!!} 
                     
                 </div>
                 <div class="detalles-arreglo">

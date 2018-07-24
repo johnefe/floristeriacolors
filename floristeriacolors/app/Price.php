@@ -8,7 +8,7 @@ class Price extends Model
 {
 
 	protected $fillable = [
-        'tamaño','precio','product_id'
+        'tamano','precio','product_id'
     ];
     //
 

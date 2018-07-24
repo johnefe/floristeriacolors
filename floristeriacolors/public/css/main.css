@@ -26,7 +26,11 @@ iframe {
     border: 0;
 }
 
+.cantidad-arreglo p,input{
+  float: left;
+  color: #000 !important;
 
+}
 h1, h2, h3,
 h4, h5, h6 {
 	font-weight: normal;
@@ -1332,6 +1336,7 @@ li.currento{
 }
 .cantidad-arreglo {
     width: 80% !important;
+    color: #000 !important;
   }
 .cantidad-datalle {
     width: 100% !important;
@@ -2242,10 +2247,10 @@ blog
 }
 /*=================================
 ==================================*/
-.tamaño-arreglo{
+.tamaño-arreglo {
   border:none;
   width: 60%;
-  color:#0e0e0e;
+  color:#000 !important;
   padding: 0px 6px;
   font-size: 16px;
 }
