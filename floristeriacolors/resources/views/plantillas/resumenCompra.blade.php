@@ -86,7 +86,7 @@
             <!--datos Destinatario -->
                 <div class=" col-md-12 date-comprador">
                     <div class="row">
-                        <h4>2. Datos del destinatario.</h4>
+                        <h4>2. Datos destinatario.</h4>
                     </div>
                         
                     <div class="row">
@@ -103,13 +103,6 @@
                                <input type="text" name="direccionDestinatario" id="direccionDestinatario" class="form-control" placeholder="Dirección. ej: Calle 21 # 24-63 Centro">
                            </div> 
                         </div> 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ">
-                           <div class="form-group date-user">
-                               <input type="text" name="telefonoDestinatario" class="form-control" id="telefonoDestinatario" placeholder="Teléfono">
-                           </div> 
-                        </div>
                     </div>
                     <div class="row">
                        <div class="col-md-12 ">

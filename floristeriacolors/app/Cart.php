@@ -22,10 +22,12 @@ class Cart extends Model
 
      public function total_carrito() {
         $total = 0;
+        $total2=0;
         $detalles = $this->details;
         foreach ($detalles as $detalle) {
-            $total += $detalle->cantidad * $detalle->precio;
+            $total = $detalle->cantidad * $detalle->precio;
+            $total2= $total2 + $total;
         }
-        return $total;
+        return $total2;
     }
 }

@@ -6,10 +6,8 @@
     <div class="container"><br><br><br><br><br>
         <div class="row">
             <!--Datos comprador y destinatario -->
-            <div class="col-lg-7 col-md-7">
-                <h3 class="">Vamos a finalizar la compra</h3>
-            </div>
-            <div class="col-lg-5 col-md-5 resumenCarrito-detalles">
+            
+            <div class="col-lg-4 col-md-offset-4 col-md-5 resumenCarrito-detalles">
                  <!--carrito de compras -->
                 <div class="">
                     <div class="col-md-12 text-center"><br>
@@ -17,19 +15,47 @@
                     </div>
                     <div class="col-md-12">
                     <!-- un detalle-->
-                      <div class="row">
-                     
-                            <h3>{{$details}</h3>
-                        
-                                                
+                      <div class="row text">
+                    <?php
+
+                    $total=0;
+                    foreach($detailss as $detail){
+
+                         echo '<strong>Cantidad: </strong>'.$detail['cantidadObjeto'].'<br><strong>Detalle: </strong>'.$detail['nombreObjeto'].'<br><strong>Precio: </strong>'.$detail['valorObjeto'].'<hr>';
+
+                         $total= $total + $detail['valorObjeto'];
+                    }
+                                                 
+                    ?>                      
                       </div>
 
                       <hr>
                       <!--fin un detalle -->
                     </div>
                     <div class="col-md-12 text-center">
-                        <h2>SUBTOTAL:<strong id="subtotalCarrito">0</strong></h2><br>
+                        <?php 
+                         echo '<h2>TOTAL A PAGAR:</h2><h3><strong id="subtotalCarrito">$'.$total.'</strong></h3><br>';
+                        ?>
                     </div>
+                    <div class=" col-md-6 col-md-offset-3">
+                        <form>
+                            <script
+                                src="https://checkout.epayco.co/checkout.js"
+                                class="epayco-button"
+                                data-epayco-key="c14bb0689238c33210b1f334ebfff74d"
+                                data-epayco-amount="<?php echo $total; ?>"
+                                data-epayco-name="Gracias por tu compra"
+                                data-epayco-description="Gracias por tu compra, tu compra sera entregada, ya te estaremos llamando."
+                                data-epayco-currency="cop"
+                                data-epayco-country="co"
+                                data-epayco-test="true"
+                                data-epayco-external="false"
+                                data-epayco-response="http://127.0.0.1:8000/"
+                                data-epayco-confirmation="http://127.0.0.1:8000/">
+                            </script>
+
+                        </form>         
+            </div> 
                 </div>
             <!--fin carrito de compras -->
             </div>

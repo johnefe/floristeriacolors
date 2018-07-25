@@ -100,30 +100,6 @@ class CartController extends Controller
         Session::forget('cart');
         Session::forget('dataCart');
         return Redirect::to('/');
-
-
-      /*  if($user->client){
-            //existe el cliente
-
-            $cliente = Client::find($user->client->id);
-            $cliente->
-            $cliente->fill($request->all());
-            $cliente->save();
-
-        }else{
-            // no existe el cliente
-            
-            $cliente = new Client;
-            $cliente->nombres = $dataCart["nombresComprador"];
-            $cliente->apellidos =$dataCart["apellidosComprador"];
-            $cliente->celular =$dataCart["celularComprador"];
-            $cliente->identificacion =$dataCart["identificacionComprador"];
-            $cliente->user_id = $auth->id;
-           
-        }
-           
-        $cart->save();*/
-
         
     }
 

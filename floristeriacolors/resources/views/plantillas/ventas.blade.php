@@ -29,9 +29,9 @@
                         <td>{{number_format($cart->total_carrito())}}</td>
                         <td>
                         @if($cart->was_payed)
-                            Cancelado
+                            Confirmado
                         @else
-                         No Cancelado
+                         Sin confirmar
 
                         @endif
 
@@ -65,7 +65,7 @@
             <span class="fa fa-times-circle-o fa-2x" id="close{{$cart->id}}"></span><br>
         <div class="pp">
             <div class="header text-center">
-                    <h4 class="title">CARRITO DE COMPRAS # {{$cart->id}} </h4>
+                    <h3 class="title"><strong>CARRITO DE COMPRAS # {{$cart->id}}</strong> </h3>
                 </div>  
             <hr>
             <!-- ****************************************************** -->
@@ -78,8 +78,8 @@
                                     <th>Imagen</th>
                                     <th>Categoria</th>
                                     <th>Nombre</th>
-                                    <th>Valor</th>
-                                   
+                                    <th>Cantidad</th>
+                                    <th>Valor</th> 
                                 </thead>
                                 <tbody>
                                 <!--inicio un movimiento-->
@@ -91,6 +91,7 @@
                                         </td>
                                         <td>{{$detail->product->nombre}}</td>
                                         <td>{{$detail->tamano}}</td>
+                                        <td>{{$detail->cantidad}}</td>
                                         <td>{{number_format($detail->precio)}}</td>
                                     </tr>
                                 @endforeach
@@ -104,35 +105,43 @@
                         </div>
                         <!--DETALLES DEL COMPRADOR -->
                         <hr>
-                        <div class="row">
-                        <div class="col-md-12"><label>DATOS COMPRADOR</label></div>
+                        <div class="row text-center">
+                        <div class="col-md-12"><h3> <strong>DATOS CLIENTE</strong></h3></div>
                             <!-- UN DATO-->
                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>NOMBRES Y APELLIDOS:</label>
+                                <div class="form-group">
+                                    <div class="col-md-4 text-left">
+                                        <label><strong>NOMBRES Y APELLIDOS:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p> {{$cart->client->nombres}} {{$cart->client->apellidos}}</p>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    {{$cart->client->nombres}} {{$cart->client->apellidos}}
+                                
+                            </div>
+                            <!--FIN UN DATO -->
+                            <!-- UN DATO-->
+                            <div class="col-md-12 text-left">
+                               
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label><strong>IDENTIFICACIÓN:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p> {{$cart->client->identificacion}} </p>
+                                    </div>
                                 </div>
                             </div>
                             <!--FIN UN DATO -->
                             <!-- UN DATO-->
                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>IDENTIFICACION:</label>
-                                </div>
-                                <div class="col-md-6">
-                                    {{$cart->client->identificacion}} 
-                                </div>
-                            </div>
-                            <!--FIN UN DATO -->
-                            <!-- UN DATO-->
-                            <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>TELÉFONO:</label>
-                                </div>
-                                <div class="col-md-6">
-                                    {{$cart->client->telefono}} 
+                                  <div class="form-group text-left">
+                                    <div class="col-md-4">
+                                        <label><strong>IDENTIFICACIÓN:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p> {{$cart->client->telefono}} </p>
+                                    </div>
                                 </div>
                             </div>
                             <!--FIN UN DATO -->
@@ -140,65 +149,67 @@
                         <!--FIN DETALLES DEL COMPRADOR -->
                         <!--DETALLES DEL DESTINATARIO -->
                         <hr>
-                        <div class="row">
-                        <div class="col-md-12"><label>DATOS DESTINATARIO</label></div>
+                        <div class="row ">
+                            <div class="col-md-12 text-center">
+
+                                <h3><strong>DATOS DESTINATARIO</strong></h3>
+                            </div>
                             <!-- UN DATO-->
                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>NOMBRE Y APELLIDOS:</label>
-                                </div>
-                                <div class="col-md-6">
-                                    {{$cart->para}}
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label><strong>NOMBRES:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p>{{$cart->para}}</p>
+                                    </div>
                                 </div>
                             </div>
                             <!--FIN UN DATO -->
                             <!-- UN DATO-->
                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>DIRECCIÓN:</label>
+                                 <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label><strong>DIRECCIÓN:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p>{{$cart->direccion}}</p>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                     {{$cart->direccion}}
+                            </div>
+                            <!-- UN DATO-->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label><strong>FECHA ENTREGA:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p>{{$cart->fecha_entrega}}</p>
+                                    </div>
                                 </div>
                             </div>
                             <!--FIN UN DATO -->
                             <!-- UN DATO-->
                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>TELÉFONO:</label>
-                                </div>
-                                <div class="col-md-6">
-                                     {{$cart->telefono}}
-                                </div>
-                            </div>
-                            <!--FIN UN DATO -->
-                            <!-- UN DATO-->
-                            <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>FECHA DE ENTREGA:</label>
-                                </div>
-                                <div class="col-md-6">
-                                     {{$cart->fecha_entrega}}
+                               <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label><strong>MENSAJE:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p>{{$cart->mensaje}}</p>
+                                    </div>
                                 </div>
                             </div>
                             <!--FIN UN DATO -->
                             <!-- UN DATO-->
                             <div class="col-md-12">
-                                <div class="col-md-4">
-                                    <label>MENSAJE TARJETA:</label>
-                                </div>
-                                <div class="col-md-8">
-                                 {{$cart->mensaje}}
-                                </div>
-                            </div>
-                            <!--FIN UN DATO -->
-                            <!-- UN DATO-->
-                            <div class="col-md-12">
-                                <div class="col-md-4">
-                                    <label>OBSERVACIÓN:</label>
-                                </div>
-                                <div class="col-md-8">
-                                     {{$cart->observacion}}
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label><strong>OBSERVACIÓN:</strong></label>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <p>{{$cart->observacion}}</p>
+                                    </div>
                                 </div>
                             </div>
                             <!--FIN UN DATO -->

@@ -342,11 +342,6 @@ class PrincipalController extends Controller
         $dataCart = json_decode($dataCart,true);
         $correo = Auth::user()->email;
 
-        /*------------------------------------*/
-       // $dataCart = Session::get('dataCart');
-        //$dataCart = json_encode($dataCart);
-       //$dataCart = json_decode($dataCart,true);
-
         $auth = Auth::user();
         $user = User::where('id',$auth->id)->first();
 
@@ -379,7 +374,7 @@ class PrincipalController extends Controller
         $details = json_decode($details,true);
 
         for ($i = 0; $i < count($details); $i++) {
-            //'cantidad','product_id','tamano','precio','cart_id'
+ 
             $detail = new Detail;
             $detail->cantidad =  $details[$i]["cantidadObjeto"];
             $detail->product_id =  $details[$i]["idObjeto"];
@@ -391,26 +386,14 @@ class PrincipalController extends Controller
             
         }
 
-        Session::forget('cart');
-        Session::forget('dataCart');
-        //return Redirect::to('/');
-        //return view('home');
-        //return view('plantillas.finalizarCompra',compact('details'));
-        return $details;
+         $detailsss = Session::get('cart');
+         $detailss=json_encode($detailsss);
+         $detailss=json_decode($detailss,true);
+         Session::forget('cart');
+         Session::forget('dataCart');
+        return view('plantillas.finalizarCompra',compact('detailss'));
+
     }
-
-        /*-----------------------------------*/
-
-
-
-         //$dataCart =  Session::get('dataCart');
-         //$dataCart = json_encode($dataCart);
-         //$dataCart = json_decode($dataCart);
-        
-
-
-        //$cart = Session::get('cart');
-        //return view('plantillas.finalizarCompra',compact('dataCart','correo'));
         
     
     public function getDataCart ()
@@ -420,11 +403,6 @@ class PrincipalController extends Controller
     }
     public function guardar(Request $request){
         return $request;
-
-        //parse_str(file_get_contents("php://input"), $_POST);
-       // return "que";
-      /*  $json = $request->json()->all();
-        return $json;*/
 
     }
     public function getCliente(User $user, Array $dataCart){
