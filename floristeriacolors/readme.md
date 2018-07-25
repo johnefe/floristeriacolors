@@ -14,6 +14,7 @@ DB_PORT=3306
 DB_DATABASE=floristeriacolors
 DB_USERNAME=root
 DB_PASSWORD='udenar'
+/*-----------------------------*/
 /*conexion con el servidor db*/
 DB_CONNECTION=mysql
 DB_HOST=localhost
@@ -21,10 +22,14 @@ DB_PORT=3306
 DB_DATABASE=floristeriacolors
 DB_USERNAME=janetharcosdm
 DB_PASSWORD='23086791'
-
-
-
-
+/*------------------------------*/
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=donvictorio
+DB_USERNAME=root
+DB_PASSWORD=''
+/*------------------------------*/
 floristeriacolors db
 usuario: janetharcosdm
 db: floristeriacolors
