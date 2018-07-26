@@ -137,10 +137,10 @@
                             <div class="col-md-12">
                                   <div class="form-group text-left">
                                     <div class="col-md-4">
-                                        <label><strong>IDENTIFICACIÓN:</strong></label>
+                                        <label><strong>TELÉFONO:</strong></label>
                                     </div>
                                     <div class="col-md-8 text-left">
-                                        <p> {{$cart->client->telefono}} </p>
+                                        <p> {{$cart->client->celular}} </p>
                                     </div>
                                 </div>
                             </div>

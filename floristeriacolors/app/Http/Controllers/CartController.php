@@ -91,12 +91,6 @@ class CartController extends Controller
 
             
         }
-
-
-                            
-        
-        
-
         Session::forget('cart');
         Session::forget('dataCart');
         return Redirect::to('/');

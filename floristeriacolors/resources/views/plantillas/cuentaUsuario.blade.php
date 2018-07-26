@@ -92,44 +92,69 @@
     
   </div>
   <div class="modal-body text-center">
-    <div class="row text-center">
-            <h3>MIS COMPRAS REALIZADAS</h3>
+    <div class="row ">
+           
           <div class="col-md-10 col-md-offset-1">
-            <!-- un detalle-->
-            @if($user->client)
-              @foreach($user->client->carts as $carrito)
-
-                @foreach($carrito->details as $detail)
-                    <div class="row">
-                        <hr>
-                            <div class="col-md-3">
-                                <h5>{{$carrito->fecha_compra}}</h5>
-                            </div>
-                            <div class="col-md-4">
-                                <h5>{{$detail->product->nombre}}</h5>
-                            </div>
-                            <div class="col-md-5">
-                                <h5>{{$detail->precio}}</h5>
-                            </div>
-        
-                        <hr>
-                    </div>
-                @endforeach
-              @endforeach
-            @endif
-
-          
-
-
-          
-            
-            <!--fin un detalle -->
-            <!-- un detalle-->
-
-            
-            <!--fin un detalle -->
-
+                 <h3>MIS COMPRAS REALIZADAS</h3>
           </div>
+            <!-- un detalle-->
+
+
+          <div class="col-md-12">
+            <div class="">
+                <!-- -->
+                <ul id="accordion2" class="accordion2">
+                <!--- -->
+                      @if($user->client)
+                          @foreach($user->client->carts as $carrito)
+
+
+                                <li>
+                                    <div class="link"> Compra realizada el: {{$carrito->fecha_compra}}, por un valor de {{$carrito->total_carrito()}}
+                                        <i class="fa fa-chevron-down">
+                                        </i>
+                                    </div>
+                                    <ul class="submenu2">
+
+
+                                        @foreach($carrito->details as $detail)
+                                            <div class="row text-center">
+                                                <hr>
+
+                                                    <div class="col-md-12 text-center">
+                                                        <p class="text-left"><span class="fa fa-star fa-1x "></span><br>
+                                                            <strong>Cantidad: </strong>{{$detail->cantidad}}<br>
+                                                            <strong>Decscripcion: </strong>{{$detail->product->nombre}}<br>
+                                                            <strong>TOtal:</strong> {{$detail->precio}}
+                                                        </p>
+                                                        <h5></h5>
+                                                    </div>
+                                
+                                                <hr>
+                                            </div>
+                                        @endforeach
+                                    </ul>
+                                </li>
+
+                          @endforeach
+                        @endif
+
+                <!-- -->
+                </ul>
+                <!-- -->
+            </div>  
+        </div> 
+
+
+          
+            
+            <!--fin un detalle -->
+            <!-- un detalle-->
+
+            
+            <!--fin un detalle -->
+
+    
      </div>
         <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="btn btn-default">Cerrar</button>
@@ -217,7 +242,7 @@
          </div>
      </div>
      <div class="col-md-12 puntosRedimir-titulo">
-         <h4>Tienes <strong>10.300 puntos</strong></h4>
+         <h4>Pregunta a nuestro Administrador por <strong>tus puntos</strong></h4>
      </div>
      
         <div class="modal-footer">

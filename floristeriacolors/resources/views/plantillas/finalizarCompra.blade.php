@@ -26,7 +26,8 @@
                          $total= $total + $detail['valorObjeto'];
                     }
                                                  
-                    ?>                      
+                    ?> 
+
                       </div>
 
                       <hr>
@@ -34,6 +35,7 @@
                     </div>
                     <div class="col-md-12 text-center">
                         <?php 
+
                          echo '<h2>TOTAL A PAGAR:</h2><h3><strong id="subtotalCarrito">$'.$total.'</strong></h3><br>';
                         ?>
                     </div>
@@ -45,13 +47,17 @@
                                 data-epayco-key="c14bb0689238c33210b1f334ebfff74d"
                                 data-epayco-amount="<?php echo $total; ?>"
                                 data-epayco-name="Gracias por tu compra"
-                                data-epayco-description="Gracias por tu compra, tu compra sera entregada, ya te estaremos llamando."
+                                data-epayco-description="Gracias por tu compra, tu compra sera entregada, ya te estaremos llamando. <?php
+                                foreach($detailss as $detail){
+                               echo '**Cantidad: '.$detail['cantidadObjeto'].' **Detalle:'.$detail['nombreObjeto'].'**Precio:'.$detail['valorObjeto'].'||';
+                                }
+                                ?> "
                                 data-epayco-currency="cop"
                                 data-epayco-country="co"
-                                data-epayco-test="true"
+                                data-epayco-test="false"
                                 data-epayco-external="false"
-                                data-epayco-response="http://127.0.0.1:8000/"
-                                data-epayco-confirmation="http://127.0.0.1:8000/">
+                                data-epayco-response="http://www.rosasdonvictorio.com/"
+                                data-epayco-confirmation="http://www.rosasdonvictorio.com/">
                             </script>
 
                         </form>         
