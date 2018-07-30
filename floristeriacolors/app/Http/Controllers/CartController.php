@@ -146,6 +146,26 @@ class CartController extends Controller
         return Redirect::to('/admin/carritos');
     }
 
+     public function cancel(Request $request, $idd)
+    {
+        $cart = Cart::find($id);
+        $cart->fill($request->all());
+        $cart->save();
+
+        $point = new Point;
+        $point->client_id = $cart->client_id;
+        $point->cart_id = $cart->id;
+        $point->puntos = ($cart->total_carrito()/1000);
+        
+        $point->save();
+
+
+
+        Session::flash('message','Carrito Confirmado correctamente');
+
+        return Redirect::to('/admin/carritos');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

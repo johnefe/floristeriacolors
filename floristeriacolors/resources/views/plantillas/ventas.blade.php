@@ -220,12 +220,22 @@
                         </div>
                         @if(!$cart->was_payed)
 
-                        <div class="col-md-9 col-md-offset-2 text-center">
+                        <div class="col-md-6  text-center">
                         {!!Form::model($cart,['route'=>['cart.update',$cart->id],'method'=>'PUT'])!!}
                         <input type="hidden" name="was_payed" value="1">
                         
-                        {!!Form::submit('Confirmar Compra',['class'=>'btn btn-danger'])!!}
+                        {!!Form::submit('Confirmar Compra',['class'=>'btn btn-success'])!!}
                             {!!Form::close()!!}
+                        
+                           
+                        </div>
+                        <div class="col-md-6  text-center">
+                        {!!Form::model($cart,['route'=>['cart.cancel',$cart->idd],'method'=>'PUT'])!!}
+                        <input type="hidden" name="was_cancel" value="2">
+                        
+                        {!!Form::submit('Cancelar Compra',['class'=>'btn btn-danger'])!!}
+                            
+                        {!!Form::close()!!}
                         
                            
                         </div>
@@ -236,6 +246,7 @@
                         @endif
                         
                     </div> 
+                    <br>
                 <!-- fin un producto --> 
             </div>     
             <!--******************************************************* -->

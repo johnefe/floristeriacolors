@@ -53,6 +53,7 @@ Route::resource('mail','MailController');
 
 Route::get('admin/carritos', ['as'=> 'carritos','uses' =>'CartController@index']);
 Route::put('cart/{id}', ['as'=> 'cart.update','uses' =>'CartController@update']);
+Route::put('cart/{idd}', ['as'=> 'cart.cancel','uses' =>'CartController@cancel']);
 Route::post('cart', ['as'=> 'cart','uses' =>'CartController@store']);
 
 /*Route::get('/', function () {
