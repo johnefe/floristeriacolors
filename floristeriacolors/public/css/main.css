@@ -181,6 +181,11 @@ body > section,
 /*=========================================
 	Slider
 ==========================================*/
+.carousel-inner img{
+  width: 100%;
+  height: 580px !important;
+}
+
 
 #slider {
   background-color:#FAFAFA; 
@@ -271,15 +276,15 @@ top: -8px;
 ==========================================*/
 
 .features {
-  background-color: #fff;
-  padding-top: 40px !important;
+  background-color: red;
+  padding-top: 1px !important;
   padding-bottom: 10px !important;
 }
 .contenido-categorias p{
   text-align: justify;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-bottom: 45px;
 }
 
@@ -723,18 +728,32 @@ formas de pago
 /*=========================================
 	seccion 1
 ==========================================*/
+.carousel-control{
+  height: 590px !important;
+  margin-top: 0px !important;
+  padding-top: 200px;
+}
 
+.t h3{
+  position:relative !important;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  top: -350px ;
+  font-weight: bold;
+
+}
 #facts {
-	background-image: url("../img/parallax/local.jpg");
-  border-top:100px solid #6B9400;/*#b4494f;*/
+	/*background-image: url("../img/parallax/local.jpg");*/
+  border-top:1px solid #6B9400;/*#b4494f;*/
   border-bottom:10px solid #6B9400;/*#b4494f;*/
-	background-color: rgba(6,32,51,1);
+	/*background-color: rgba(6,32,51,1);*/
 	background-attachment: fixed !important;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-  
-	padding: 0;
+  height: 700px;
+  margin-bottom: 0px !important;
 }
 
 .facts .devider:before,
@@ -761,7 +780,7 @@ formas de pago
 }
 
 .parallax-overlay {
-	background-color: rgba(0,0,0,.5);
+	/*background-color: rgba(0,0,0,.5);*/
 	padding: 70px 0;
 }
 .parallax-overlay h3{

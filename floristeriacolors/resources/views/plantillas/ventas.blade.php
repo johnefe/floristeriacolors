@@ -28,20 +28,22 @@
                         <td>{{$cart->client->nombres}} {{$cart->client->apellidos}}</td>
                         <td>{{number_format($cart->total_carrito())}}</td>
                         <td>
-                        @if($cart->was_payed)
+                        @if($cart->was_payed==1)
                             Confirmado
+                        @elseif($cart->was_payed==2)
+                         Cancelado
                         @else
-                         Sin confirmar
-
+                        sin confirmar
                         @endif
 
                         </td>
                         <td>
-                         @if($cart->was_payed)
+                         @if($cart->was_payed==1)
                             <a href="#info" data-type="zoomin" id="btn-ver{{$cart->id}}" onclick="verbtn({{$cart->id}})" class="btn btn-success">ver</a>
-                        @else
+                        @elseif($cart->was_payed==2)
                           <a href="#info" data-type="zoomin" id="btn-ver{{$cart->id}}" onclick="verbtn({{$cart->id}})" class="btn btn-danger">ver</a>
-
+                        @else
+                            <a href="#info" data-type="zoomin" id="btn-ver{{$cart->id}}" onclick="verbtn({{$cart->id}})" class="btn btn-primary">ver</a>
                         @endif
                         
                            
@@ -230,8 +232,8 @@
                            
                         </div>
                         <div class="col-md-6  text-center">
-                        {!!Form::model($cart,['route'=>['cart.cancel',$cart->idd],'method'=>'PUT'])!!}
-                        <input type="hidden" name="was_cancel" value="2">
+                        {!!Form::model($cart,['route'=>['cart.update',$cart->id],'method'=>'PUT'])!!}
+                        <input type="hidden" name="was_payed" value="2">
                         
                         {!!Form::submit('Cancelar Compra',['class'=>'btn btn-danger'])!!}
                             

@@ -6,7 +6,7 @@
       <!-- seccion 1  -->
 
         <section id="facts" class="facts">
-            <div class="parallax-overlay">
+           <!-- <div class="parallax-overlay">
                 <div class="container"><br><br><br><br><br><br>
                 <br>
                    <div class="row">
@@ -23,6 +23,46 @@
                         </div><br><br><br>                     
                    </div>
                                         
+                </div>
+            </div>-->
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-12" >  
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <!-- Wrapper for slides -->
+                          <div class="carousel-inner">
+                            <div class="item active t ">
+                                 <img src="/img/parallax/local.jpg" alt="Floristeria Rosas Don Victorio">
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-lg-offset-3 col-md-6 text-center">
+                                        <h3  class="wow slideInLeft animated ">Somos la Floristeria más importante de <strong>Colombia</strong></h3>
+                                    </div>
+                                </div>
+                                <!--<p data-wow-duration="500ms" class="wow slideInRight animated">Jorge Luis Viveros</p>-->
+                            </div>
+
+                            <div class="item">
+                              <img src="/img/parallax/local.jpg" alt="Floristeria Rosas Don Victorio">
+                            </div>
+
+                            <div class="item">
+                              <img src="/img/parallax/tulipanes.jpg" alt="Floristeria Rosas Don Victorio">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="fa fa-chevron-left fa-1x"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="fa fa-chevron-right fa-1x"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -109,7 +149,19 @@
        
         
            
-       
+   <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b685fa8e21878736ba2ab84/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->    
 
 
 

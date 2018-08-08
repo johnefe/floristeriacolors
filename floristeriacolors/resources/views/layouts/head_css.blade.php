@@ -19,6 +19,7 @@
          <link rel="stylesheet" href='/css/style.css'>
         <!-- Main Stylesheet -->
         <link rel="stylesheet" href='/css/main.css'>
+        
         <!-- media-queries -->
         <link rel="stylesheet" href='/css/media-queries.css'>
         <!-- fonts -->

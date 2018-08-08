@@ -32,7 +32,10 @@
                     
 
                      
-                          <div class="col-md-4 col-md-offset-4">
+                       
+                </div>
+                <div class="row">
+                   <div class="col-md-4 col-md-offset-4">
                             <div class="btn-categorias">
                                 <a href="/arreglos">VER TODOS LOS ARREGLOS</a>
                             </div>

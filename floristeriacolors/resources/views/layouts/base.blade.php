@@ -33,6 +33,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Scripts -->
+        <script src="https://use.fontawesome.com/74edfe93a4.js"></script>
         <script>
             window.Laravel = {!! json_encode([
                 'csrfToken' => csrf_token(),
