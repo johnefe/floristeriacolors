@@ -6,66 +6,55 @@
       <!-- seccion 1  -->
 
         <section id="facts" class="facts">
-           <!-- <div class="parallax-overlay">
-                <div class="container"><br><br><br><br><br><br>
-                <br>
-                   <div class="row">
-                        <div data-wow-duration="1000ms" class="wow slideInLeft animated col-md-6 col-md-offset-3 text-center">
-                            <h3>Somos la Floristeria más importante de <strong>Colombia</strog></h3>
-                        </div><br><br><br>
-                        <div class="col-md-6 col-md-offset-3 col-xs-12 text-center btn-en">
-                            <a href="/arreglos" class="btn-entrada text-center">REALIZA TU ARREGLO FLORAL!</a>
-                        </div>   <br><br><br>
-                        <div data-wow-duration="1000ms" class="wow slideInLeft animated col-md-6 col-md-offset-3 text-center">
-                            <h3>
-                            <strong>Garantizamos el mejor precio con la más alta calidad y diseño.</strong>
-                            </h3>
-                        </div><br><br><br>                     
-                   </div>
-                                        
-                </div>
-            </div>-->
-            <div class="">
-                <div class="row">
-                    <div class="col-lg-12" >  
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        
+                <div id="myCarousel" class="carousel" data-ride="carousel">
                   <!-- Indicators -->
                   <!-- Wrapper for slides -->
-                          <div class="carousel-inner">
-                            <div class="item active t ">
-                                 <img src="/img/parallax/local.jpg" alt="Floristeria Rosas Don Victorio">
+                    <div class="carousel-inner" >
+                            <!-- sliders-->
+                           
+                            @foreach($sliders as $slider)
 
-                                <div class="row">
-                                    <div class="col-lg-6 col-lg-offset-3 col-md-6 text-center">
-                                        <h3  class="wow slideInLeft animated ">Somos la Floristeria más importante de <strong>Colombia</strong></h3>
+                                <div class="item t @if($slider->id === 4) active  @endif" data-interval="1000">
+                                     <img src="/img/arreglos/slider/{{$slider->imagen}}" alt="Floristeria Rosas Don Victorio" class="filtro-1">
+                                    <!-- -->
+                                    <div class="row ">
+                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 text-center" >
+                                            <h3  class="wow slideInLeft animated "><strong>{{$slider->descripcion}}</strong></h3>
+                                            <br>
+                                            <div class="col-md-6 col-md-offset-3 col-xs-12 text-center btn-en">
+                                                <a href="/arreglos" class="btn-entrada text-center"> REALIZA TU ARREGLO FLORAL </a>
+                                            </div> <br><br><br><br><br>
+                            
+                                                @foreach($datas as $data)
+                                                <a href="{{$data->facebook}}" target="blank" class="red "><img src="/img/icons/facebook.svg" class="icon-red"></span></a>
+                                                <a href="{{$data->instagram}}" target="blank" class="red"><img src="/img/icons/instagram.svg" class="icon-red"></span></a>
+                                                <a href="{{$data->pinterest}}" target="blank" class="red"><img src="/img/icons/pinterest.svg" class="icon-red"></span></a>
+                                                @endforeach
+                                            
+                                        </div>
                                     </div>
+                                    <!-- -->
+
                                 </div>
-                                <!--<p data-wow-duration="500ms" class="wow slideInRight animated">Jorge Luis Viveros</p>-->
-                            </div>
 
-                            <div class="item">
-                              <img src="/img/parallax/local.jpg" alt="Floristeria Rosas Don Victorio">
-                            </div>
-
-                            <div class="item">
-                              <img src="/img/parallax/tulipanes.jpg" alt="Floristeria Rosas Don Victorio">
-                            </div>
+                            @endforeach
+                          
+                            <!-- -->
                         </div>
 
                         <!-- Left and right controls -->
                           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="fa fa-chevron-left fa-1x"></span>
-                            <span class="sr-only">Previous</span>
+                            <!--<span class="fa fa-chevron-left fa-1x"></span>
+                            <span class="sr-only">Previous</span>-->
                           </a>
                           <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="fa fa-chevron-right fa-1x"></span>
-                            <span class="sr-only">Next</span>
+                            <!--<span class="fa fa-chevron-right fa-1x"></span>
+                            <span class="sr-only">Next</span>-->
                           </a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
+        </section><br><br>
 
       <!-- fin seccion 1-->
 
@@ -148,21 +137,5 @@
     
        
         
-           
-   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5b685fa8e21878736ba2ab84/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->    
-
-
 
 @stop

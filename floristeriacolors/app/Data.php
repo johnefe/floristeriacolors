@@ -8,6 +8,6 @@ class Data extends Model
 {
 	 protected $table = 'datas';
     protected $fillable = [
-        'email','ciudad','direccion','telefono','celular','facebook','youtube','pinterest','instagram'
+        'email','ciudad','nombre','direccion','telefono','celular','facebook','youtube','pinterest','instagram'
     ];
 }

@@ -23,13 +23,13 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Empresa</label>
-                                                <input type="text" class="form-control" disabled placeholder="Company" value="www.floristeríaColors.com">
+                                                <input type="text" class="form-control" disabled placeholder="Company" value="www.rosasdonvictorio.com">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Nombre</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="Floristeria Flowers">
+                                                <input type="text" class="form-control" placeholder="Username" value="{{$data->nombre}}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -87,9 +87,9 @@
                             <div class="content">
                                 <div class="author">
                                      <a href="#">
-                                    <img class="avatar border-gray" src="/img/logo.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="/img/logo.jpeg" alt="..."/>
 
-                                      <h4 class="title">Floristería Colors<br />
+                                      <h4 class="title">{{$data->nombre}}<br />
                                          <small>{{$data->direccion}}</small>
                                       </h4>
                                     </a>

@@ -28,7 +28,7 @@
                         <li><a href="/ayuda">Ayuda</a></li>
                         <li><a href="/contacto">Contáctanos</a></li>
                         <li><a href="/cuentaUsuario">Tu cuenta</a></li>
-                        <li id="car"><a data-toggle="modal" href="#responsive" ><span class="fa fa-shopping-cart fa-2x" id="LookCar2" onclick=""></span></a></li>
+                        <li id="car"><a data-toggle="modal" href="#responsive" ><img src="/img/icons/cart.svg" style="width:35px; top: -12px; position: relative;" id="LookCar2"></a></li>
                         
                         
                        

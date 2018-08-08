@@ -7,7 +7,7 @@
     <div class="card">
         <div class="header">
             <h4 class="title">MULTIMEDIA</h4>
-            <p class="category">www.floristeriaColors.com</p>
+            <p class="category">www.rosasdonvictorio.com</p>
         </div>
     </div>
 </div>
@@ -42,7 +42,16 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="card">
         <div class="header">
-            <h4 class="title">{{$slider->ruta}}</h4>
+            <h4 class="title">
+
+                @if($slider->ruta === '1')
+                    Slider en "Realizar arreglo"
+                @elseif($slider->ruta === '2')
+                    Slider en Inico
+                @elseif($slider->ruta === '3')
+                    Slider en arbol memoral
+                @endif
+            </h4>
               
         </div>
         <div class="content">
@@ -52,10 +61,11 @@
                 <div class="row">                                      
                     <div class="col-md-12">
                         <div class="form-group">
-
-                            {!!Form::label('nombre','Nombre: ')!!}
-                            {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre'])!!}
-
+                            @if($slider->ruta === '1')
+                                {!!Form::label('nombre','Nombre: ')!!}
+                                {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre'])!!}            
+                             @endif
+                            
                         </div>
                     </div>
                 </div>

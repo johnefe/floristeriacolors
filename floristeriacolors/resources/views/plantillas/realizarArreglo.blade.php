@@ -22,7 +22,7 @@
                             @foreach($sliders as $slider)
                             
                             <li class="currento">
-                                <img src="/img/slider/{{$slider->imagen}}" class="img-responsive" alt="Slider Imagen 1">
+                                <img src="/img/slider/{{$slider->imagen}}" class="img-responsive" alt="Floristeria Rosas Don Victorio">
                                 <div class="caption">
                                     <h3 class="caption-title">{{$slider->nombre}}</h3>
                                     <p> {{$slider->descripcion}}</p>

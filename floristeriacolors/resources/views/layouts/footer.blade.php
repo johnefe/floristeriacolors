@@ -10,11 +10,12 @@
                                 
                                 <li>Nuestro email: <a href="#">rosasdonvictorio@gmail.com</a></li>
                                 <li>
-                                    <a href="#" class="fb" > <span class="fa fa-facebook-official fa-3x"></span> </a>
-                                    <a href="#" class="insta" > <span class="fa fa-instagram fa-3x"></span> </a>
-                                    <a href="#" class="tw" > <span class="fa fa-twitter-square fa-3x"></span> </a>
-                                    <a href="#" class="youtube"> <span class="fa fa-pinterest-square fa-3x"></span> </a>
-
+                                   @foreach($datas as $data)
+                                    <a href="{{$data->facebook}}" target="blank" class="fb" > <span class="fa fa-facebook-official fa-3x"></span> </a>
+                                    <a href="{{$data->instagram}}" target="blank" class="insta" > <span class="fa fa-instagram fa-3x"></span> </a>
+                                    <a href="{{$data->youtube}}" target="blank" class="tw" > <span class="fa fa-twitter-square fa-3x"></span> </a>
+                                    <a href="{{$data->pinterest}}" target="blank" class="youtube"> <span class="fa fa-pinterest-square fa-3x"></span> </a>
+                                    @endforeach
                                 </li>
                                 
                             </ul>
@@ -108,3 +109,16 @@
   </div>
  
 </div>
+   <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b685fa8e21878736ba2ab84/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->    

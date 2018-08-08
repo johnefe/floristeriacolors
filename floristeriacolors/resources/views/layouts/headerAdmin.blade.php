@@ -26,7 +26,7 @@
                         <li><a href="/ayuda">Ayuda</a></li>
                         <li><a href="/contacto">Contáctanos</a></li>
                         <li><a href="/login">Tu cuenta</a></li>
-                        <li><a><span class="fa fa-shopping-cart fa-2x"></span></a></li>
+                        <li><a><img src="/img/icons/cart.svg" style="width:30px"><!--<span class="fa fa-shopping-cart fa-2x"></span>--></a></li>
                     </ul>
                 </nav>
                 <!-- /main nav -->

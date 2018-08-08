@@ -32,10 +32,13 @@ class PrincipalController extends Controller
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
                 ->where('category_type_id', 1)->groupBy('products.id')->get()->random(4)->all();
-       /* $masVendidos = Product::rightJoin('prices','products.id','prices.product_id')
-            ->select('products.*')->where('category_id', $producto->category_id)->groupBy('products.id')->get()->random(4)->all();*/
 
-        return View('plantillas.index',compact('categories','masVendidos'));
+       $sliders= Slider::where('ruta', 2)->get();
+
+       $datas = Data::all();
+
+
+        return View('plantillas.index',compact('categories','masVendidos','sliders','datas'));
     }
     /**
      * Display a listing of the resource.
@@ -48,10 +51,10 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $masVendidos = Product::limit(6)->get();
         $sliders = Slider::all();
-    
+        $datas = Data::all();
 
 
-        return View('plantillas.realizarArreglo',compact('categories','masVendidos','ocasiones','sliders'));
+        return View('plantillas.realizarArreglo',compact('categories','masVendidos','ocasiones','sliders','datas'));
     }
     /**
      * Display a listing of the resource.
@@ -63,7 +66,8 @@ class PrincipalController extends Controller
         $categories = Category::All();
         $categoria = Category::find($id);
         $ocasiones = Occasion::All();
-        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones'));
+        $datas = Data::all();
+        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -72,6 +76,7 @@ class PrincipalController extends Controller
     {
         $categories = Category::where('category_type_id', 1)->get();
         $ocasiones = Occasion::All();
+        $datas = Data::all();
         $sliders = Slider::all();
         $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
@@ -105,7 +110,7 @@ class PrincipalController extends Controller
 
 
         }
-        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -130,6 +135,7 @@ class PrincipalController extends Controller
     {
         $categories = Category::where('category_type_id', 1)->get();
         $ocasiones = Occasion::All();
+        $datas = Data::all();
          $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
@@ -142,7 +148,7 @@ class PrincipalController extends Controller
         $nombre = "Arreglos";
         $sliders = Slider::all();
             
-        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -155,10 +161,11 @@ class PrincipalController extends Controller
     public function arregloSeleccionado($id)
     {
         $producto = Product::find($id);
+        $datas = Data::all();
         $categories = Category::where('category_type_id', 2)->get();
         $productosRandom = Product::rightJoin('prices','products.id','prices.product_id')
             ->select('products.*')->where('category_id', $producto->category_id)->groupBy('products.id')->get();
-        return View('plantillas.arregloSeleccionado',compact('producto','categories','productosRandom'));
+        return View('plantillas.arregloSeleccionado',compact('producto','categories','productosRandom','datas'));
     }
 
     /**
@@ -168,8 +175,8 @@ class PrincipalController extends Controller
      */
     public function login()
     {
-        
-        return View('plantillas.login');
+        $datas = Data::all();
+        return View('plantillas.login',compact('datas'));
     }
     /**
      * Display a listing of the resource.
@@ -179,7 +186,8 @@ class PrincipalController extends Controller
     public function contacto()
     {
         $data = Data::first();
-        return View('plantillas.contacto',compact('data'));
+        $datas = Data::all();
+        return View('plantillas.contacto',compact('data','datas'));
     }
 
     /**
@@ -202,7 +210,8 @@ class PrincipalController extends Controller
     public function ayuda()
     {
         $video = Video::where('ruta', 'ayuda')->first();
-        return view('plantillas.ayuda',compact('video'));
+        $datas = Data::all();
+        return view('plantillas.ayuda',compact('video','datas'));
         
     }
 
@@ -213,8 +222,8 @@ class PrincipalController extends Controller
      */
     public function conocenos()
     {
-        
-        return View('plantillas.conocenos');
+        $datas = Data::all();
+        return View('plantillas.conocenos',compact('datas'));
     }
 
     /**
@@ -224,8 +233,8 @@ class PrincipalController extends Controller
      */
     public function arbolesMemorales()
     {
-        
-        return View('plantillas.arbolesMemorales');
+        $datas = Data::all();
+        return View('plantillas.arbolesMemorales', compact('datas'));
     }
 
       /**
@@ -235,8 +244,8 @@ class PrincipalController extends Controller
      */
     public function politicas()
     {
-        
-        return View('plantillas.politicas');
+        $datas = Data::all();
+        return View('plantillas.politicas', compact('datas'));
     }
 
 
@@ -248,8 +257,8 @@ class PrincipalController extends Controller
      */
     public function puntosFloristeria()
     {
-        
-        return View('plantillas.puntosFloristeria');
+        $datas = Data::all();
+        return View('plantillas.puntosFloristeria', compact('datas'));
     }
     /**
      * Display a listing of the resource.
@@ -261,10 +270,11 @@ class PrincipalController extends Controller
         $auth = Auth::user();
         $user = User::where('id',$auth->id)->first();
         $cliente =$user->client;
+        $datas = Data::all();
         $carrito = Session::get('cart'); 
 
         
-        return View('plantillas.resumenCompra',compact('cliente','cart'));
+        return View('plantillas.resumenCompra',compact('cliente','cart','datas'));
     }
     /**
      * Display a listing of the resource.
@@ -273,8 +283,8 @@ class PrincipalController extends Controller
      */
     public function finalizarCompra()
     {
-        
-        return View('plantillas.finalizarCompra');
+        $datas = Data::all();
+        return View('plantillas.finalizarCompra',compact('datas'));
     }
     /**
      * Display a listing of the resource.
@@ -282,9 +292,10 @@ class PrincipalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function blog()
-    {
+    {   
+        $datas = Data::all();
         $articles = Article::All();
-        return View('plantillas.blog',compact('articles'));
+        return View('plantillas.blog',compact('articles','datas'));
     }
 
 
@@ -296,8 +307,8 @@ class PrincipalController extends Controller
      */
     public function ventas()
     {
-        
-        return View('plantillas.ventas');
+        $datas = Data::all();
+        return View('plantillas.ventas',compact('datas'));
     }
     public function admin()
     {
@@ -341,6 +352,7 @@ class PrincipalController extends Controller
         $dataCart = json_encode($dataCart);
         $dataCart = json_decode($dataCart,true);
         $correo = Auth::user()->email;
+        $datas = Data::all();
 
         $auth = Auth::user();
         $user = User::where('id',$auth->id)->first();
@@ -391,7 +403,7 @@ class PrincipalController extends Controller
          $detailss=json_decode($detailss,true);
          Session::forget('cart');
          Session::forget('dataCart');
-        return view('plantillas.finalizarCompra',compact('detailss'));
+        return view('plantillas.finalizarCompra',compact('detailss','datas'));
 
     }
         

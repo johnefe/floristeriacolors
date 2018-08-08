@@ -4,6 +4,7 @@ namespace FloristeriaColors\Http\Controllers;
 
 use Illuminate\Http\Request;
 use FloristeriaColors\Slider;
+use FloristeriaColors\Data;
 
 use Session;
 use Redirect;
@@ -19,6 +20,12 @@ class SliderController extends Controller
     public function index()
     {
         //
+        $datas = Data::all();
+        $sliders=Slider::where('ruta', 3)->get();
+
+        return View('plantillas.arbolesMemorales',compact('sliders','datas'));
+
+
     }
 
     /**

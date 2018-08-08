@@ -27,7 +27,7 @@ Route::get('contacto/','PrincipalController@contacto');
 //Route::get('cuentaUsuario/','PrincipalController@cuentaUsuario');
 Route::get('ayuda/','PrincipalController@ayuda');
 Route::get('politicas/','PrincipalController@politicas');
-Route::get('arbolesMemorales/','PrincipalController@arbolesMemorales');
+Route::get('arbolesMemorales/','SliderController@index');
 Route::get('conocenos/','PrincipalController@conocenos');
 Route::get('puntosFloristeria/','PrincipalController@puntosFloristeria');
 Route::get('resumenCompra/',['middleware' =>'auth','uses'=>'PrincipalController@resumenCompra']);

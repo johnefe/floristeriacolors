@@ -1,29 +1,38 @@
 @extends('layouts.base')
 
 @section('content')
-<section class="arbol">
-    <div class="parallax-overlay">
-    <div class="container">
+<section class="blog" id="blog">
+    <div class="parallax-overlays">
+    <div class="container ">
         <div class="row">
             <div class="col-md-10 col-md-offset-1 text-center titulo-memoral" >
                 <h3>ÁRBOLES MEMORALES</h3>
             </div>
         </div>
-        <div class="row">
+        <div class="row  texto-memoral">
             <div class="col-md-6 text-center">
-                <img src="/img/parallax/local.jpg" class="img-responsive">
+                <div id="myCarousel" class="carousel" data-ride="carousel" style="height: 400px !important">
+                  <!-- Wrapper for slides -->
+                    <div class="carousel-inner" >
+
+                            @foreach($sliders as $slider)
+                                <div class="item t @if($slider->id === 7) active  @endif " >
+                                 <img src="/img/arreglos/slider/{{$slider->imagen}}" alt="Floristeria Rosas Don Victorio" class="" style="height: 400px !important;">
+  
+                                </div>
+                            @endforeach
+                    </div>
+                         
+                </div>
             </div>
             <div class="col-md-6  texto-memoral">
-                <p>
-                    La perdida de un ser querido siempre marcará nuestras vidas y
-                    dejarán un vacio que nadie podrá ocupar. En muchas ocasiones se decide guardar las cenizas de ese ser querido que se adelanto a la partida y tenerlas siempre cerca; En Floristería Colors pensando siempre en nuestros clientes, ofrece el servicio de árboles memorales, donde las personas pueden apadrinar un arbol bonsai en el cual depositaran las cenizas de sus seres queridos siendo esta una forma diferente de recordarlos. 
-                </p>
-                <p> Comunícate con nosotros y te daremos a conocer como puedes acceder a un árbol memoral. <a href="/contacto"><span class="fa fa-x1 fa-hand-o-up"></span></a> </p>
-                <p><strong>
-                    EL ÁRBOL ES VIDA, Y EN LOS ARBOLES MEMORALES PERMANECERAN VIVOS SUS RECUERDOS.
-                </strong>
-                    
-                </p>
+                @foreach($sliders as $slider)
+                    @if($slider->id === 7)
+                        <p>{{$slider->descripcion}}</p>
+                        
+                        <p><strong>{{$slider->nombre}}</strong></p>
+                    @endif
+                 @endforeach
             </div>
         </div>
     </div>

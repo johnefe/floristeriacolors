@@ -13,7 +13,7 @@
                         </div>
                         <div class="win text-center">
                              <p>
-                            Con <strong>Floristeria Colors</strong> Ganas Puntos en cada compra que realices y puedes utilizalos <h5>para pagar tus proximos arreglos.!</h5>
+                            Con <strong>Rosas Don Victorio</strong> Ganas Puntos en cada compra que realices y puedes utilizalos <h5>para pagar tus proximos arreglos.!</h5>
                         </p>
                             <a href="/puntosFloristeria" class="ver-info-puntos form-control">Ver mas Información</a>
                         </div>

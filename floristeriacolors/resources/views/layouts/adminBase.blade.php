@@ -29,8 +29,8 @@
 
         <div class="sidebar-wrapper clasico">
             <div class="logo">
-                <a href="http://www.floristeriaColors.com" class="simple-text">
-                    FLORISTERÍA COLORS
+                <a href="http://www.rosasdonvictorio.com" class="simple-text">
+                    ROSAS DON VICTORIO
                 </a>
             </div>
              <ul id="accordion9" class=" nav">
