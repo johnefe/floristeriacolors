@@ -5,7 +5,7 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Admin Colors</title>
+    <title>Admin rosas don victorio</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -79,6 +79,14 @@
                             <a href="/admin/ocasiones">
                                 <i class="fa fa-telegram fa-1x"></i>
                                 OCASIONES
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="link linkito">
+                            <a href="/admin/colores">
+                                <i class="fa fa-telegram fa-1x"></i>
+                                COLORES
                             </a>
                         </div>
                     </li>

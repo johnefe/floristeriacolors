@@ -9,17 +9,17 @@
 
     <div class="card">
         <div class="header">
-            <h4 class="title">REGISTRAR OCASIÓN</h4>
+            <h4 class="title">REGISTRAR COLOR</h4>
             <p class="category">www.rosasdonvictorio.com</p>
 
         </div>
         <div class="content">
-             {!!Form::open(['route'=> 'ocasiones.store', 'method'=>'POST'])!!}
+             {!!Form::open(['route'=> 'colores.store', 'method'=>'POST'])!!}
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                        {!!Form::label('Nombre ocasión:')!!}
-                        {!!Form::text('ocasion',null,['class'=>'form-control','placeholder'=>'Escribe el nombre de la ocasión'])!!}
+                        {!!Form::label('Nombre color:')!!}
+                        {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Escribe el nombre del color'])!!}
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
     <div class="">
     <div class="card">
         <div class="header">
-            <h4 class="title">OCASIONES REGISTRADAS</h4>
+            <h4 class="title">COLORES REGISTRADOS</h4>
                     </div>
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -46,9 +46,9 @@
                 <tbody>
 
                 <!--inicio una categoria -->
-                @foreach($ocasiones as $ocasion)
+                @foreach($colores as $color)
                  <tr>
-                        <td>{{$ocasion->ocasion}}</td>
+                        <td>{{$color->nombre}}</td>
                         <td>
                             <button type="submit" class="btn btn-success" ><span class="fa fa-pencil fa-1x"></span></button>
                             <button type="submit" class="btn btn-danger" ><span class="fa fa-trash fa-1x"></span></button>
@@ -70,14 +70,17 @@
 <div class="col-md-6">
     <div class="card">
         <div class="header">
-            <h4 class="title">ADICIONAR PRODUCTO A OCASIÓN</h4>
+            <h4 class="title">ADICIONAR PRODUCTO A COLOR</h4>
 
         </div>
         <div class="content">
         <script>
     $(document).ready(function(){
-        $('#occasion_id').change(function(){
-            $.get('/dropdown/'+$(this).val(),
+        $('#colors_id').change(function(){
+            console.log($(this).val());
+            // -------------------------------------
+
+        $.get('/colores/'+$(this).val(),
             function(data) {
                 console.log(data)
                 $.get('/productos',function(productos){
@@ -105,6 +108,8 @@
                  });//cierra get Productos      
                 
             });//ciera funcion y get dropdown
+
+            //--------------------------------------
         });//cierra funcion change
     });  
     function BuscarProducto(productos,producto){
@@ -139,8 +144,8 @@
                         <h3>Listas vinculadas</h3>
 
                         {{ Form::open() }}
-                        {!!Form::label('Ocasion','Escoge la ocasion:')!!}
-                            {!!Form::select('occasion_id',$occasions,null,['class'=>'form-control', 'id' =>'occasion_id' ])!!}  
+                        {!!Form::label('Color','Escoge el color:')!!}
+                            {!!Form::select('colors_id',$colors,null,['class'=>'form-control', 'id' =>'colors_id' ])!!}  
                         <br>
                         {{ Form::close()}}
                         </div>
@@ -187,16 +192,16 @@ function showCheckboxes() {
 
 function validar(obj){
     if(obj.checked==true){
-        var array = {"product_id":parseInt(obj.id),"occasion_id":parseInt($( "#occasion_id" ).val())}
+        var array = {"product_id":parseInt(obj.id),"colors_id":parseInt($( "#colors_id" ).val())}
         console.log(obj.id);
-        console.log($( "#occasion_id" ).val());
+        console.log($( "#colors_id" ).val());
         console.log(array);
         console.log(JSON.stringify(array))
         
 
         $.ajax({
             type: "POST",
-            url: "/ocasionproducto",
+            url: "/colorproducto",
             data: JSON.stringify(array),
             contentType: "json",
             processData: false,
@@ -209,10 +214,10 @@ function validar(obj){
             }
         });
 
-        alert("si");
+        alert("Deseas asignar este producto a este color?");
     }else{
         //elimina
-        alert("no");
+        alert("Deseas quitar este producto a este color?");
     }
 }
 </script>

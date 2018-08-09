@@ -16,6 +16,7 @@ use FloristeriaColors\Slider;
 use FloristeriaColors\Cart;
 use FloristeriaColors\Client;
 use FloristeriaColors\Detail;
+use FloristeriaColors\Color;
 
 class PrincipalController extends Controller
 {
@@ -49,12 +50,13 @@ class PrincipalController extends Controller
     {
         $categories = Category::where('category_type_id', 1)->get();
         $ocasiones = Occasion::All();
+        $colores= Color::All();
         $masVendidos = Product::limit(6)->get();
         $sliders = Slider::all();
         $datas = Data::all();
 
 
-        return View('plantillas.realizarArreglo',compact('categories','masVendidos','ocasiones','sliders','datas'));
+        return View('plantillas.realizarArreglo',compact('categories','masVendidos','ocasiones','sliders','datas','colores'));
     }
     /**
      * Display a listing of the resource.
@@ -67,7 +69,8 @@ class PrincipalController extends Controller
         $categoria = Category::find($id);
         $ocasiones = Occasion::All();
         $datas = Data::all();
-        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas'));
+        $colores = Color::all();
+        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas','colores'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -77,6 +80,7 @@ class PrincipalController extends Controller
         $categories = Category::where('category_type_id', 1)->get();
         $ocasiones = Occasion::All();
         $datas = Data::all();
+        $colores=Color::all();
         $sliders = Slider::all();
         $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
@@ -95,6 +99,12 @@ class PrincipalController extends Controller
             $products = $ocasion->products_with_price();
             $nombre = $ocasion->ocasion;
 
+        }else if ($filtro == 'colores'){
+            
+            $color = Color::find($id);
+            $products = $color->products_with_prices();
+            $nombre = $color->nombre;
+
         } else if($filtro == 'destacados'){
             $nombre = "Destacados";
             $products = Product::join('popular_products','products.id','popular_products.product_id')->join('categories', 'categories.id', '=', 'products.category_id')
@@ -110,7 +120,7 @@ class PrincipalController extends Controller
 
 
         }
-        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -120,6 +130,13 @@ class PrincipalController extends Controller
 
         $ocasion = Occasion::find($id);
         $products = $ocasion->products;
+        return $products;
+
+    }
+    public function color($id){
+
+        $color = Color::find($id);
+        $products = $color->products;
         return $products;
 
     }
@@ -136,6 +153,7 @@ class PrincipalController extends Controller
         $categories = Category::where('category_type_id', 1)->get();
         $ocasiones = Occasion::All();
         $datas = Data::all();
+        $colores= Color::all();
          $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
@@ -148,7 +166,7 @@ class PrincipalController extends Controller
         $nombre = "Arreglos";
         $sliders = Slider::all();
             
-        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores'));
 
         
        // return View('plantillas.categoriaSeleccionada');

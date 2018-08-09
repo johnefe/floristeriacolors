@@ -3,13 +3,13 @@
 namespace FloristeriaColors\Http\Controllers;
 
 use Illuminate\Http\Request;
-use FloristeriaColors\Occasion;
+use FloristeriaColors\Http\Controllers\Controller;
+use FloristeriaColors\Color;
 use FloristeriaColors\Product;
 
 use Session;
 use Redirect;
-
-class OccasionController extends Controller
+class ColorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,12 +22,12 @@ class OccasionController extends Controller
     }
     public function index()
     {
-        $ocasiones = Occasion::All();
-        $occasions = Occasion::pluck('ocasion','id');
+        $colores = Color::All();
+        $colors = Color::pluck('nombre','id');
         $products = Product::join('categories', 'categories.id', '=', 'products.category_id')
             ->select('products.*')->where('category_type_id', 1)->get();
-        
-        return view('occasion.index',compact('ocasiones','occasions','products'));
+            
+        return view('color.index',compact('colores','colors','products'));
         
     }
 
@@ -49,8 +49,8 @@ class OccasionController extends Controller
      */
     public function store(Request $request)
     {
-        Occasion::create($request->all());
-        return redirect('/admin/ocasiones')->with('message','Ocasion Guardada con exito');
+        Color::create($request->all());
+        return redirect('/admin/colores')->with('message','Color Guardado con exito');
 
     }
 
@@ -85,13 +85,13 @@ class OccasionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ocasion = Occasion::find($id);
-        $ocasion->fill($request->all());
-        $ocasion->save();
+        $color = Color::find($id);
+        $color->fill($request->all());
+        $color->save();
 
-        Session::flash('message','Ocasion Editado correctamente');
+        Session::flash('message','Color Editado correctamente');
 
-        return Redirect::to('/admin/ocasiones');
+        return Redirect::to('/admin/colores');
     }
 
     /**
@@ -103,13 +103,13 @@ class OccasionController extends Controller
     public function destroy($id)
     {
         try {
-                Ocassion::destroy($id);
-                Session::flash('message','Ocasion eliminado correctamente');
-                return Redirect::to('/admin/ocasiones');
+                Color::destroy($id);
+                Session::flash('message','Color eliminado correctamente');
+                return Redirect::to('/admin/colores');
 
             } catch (\Illuminate\Database\QueryException $e) {
-                Session::flash('error','No se puede eliminar por que tiene productos');
-                return Redirect::to('/admin/ocasiones');
+                Session::flash('error','No se puede eliminar por que tiene productos asignados');
+                return Redirect::to('/admin/colores');
 
             } 
     }

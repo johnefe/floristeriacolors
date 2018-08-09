@@ -74,7 +74,7 @@
                         <ul class="submenu2">
                             <p>Nuestros productos son cuidadosamente diseñados por expertos floristas con flores frescas y artículos seleccionados, (las fotos son una referencia) podrá tener cambios según la disponibilidad e interpretación del florista para mantener al máximo nuestro standard de calidad total y frescura.</p>
                             <h4>
-                            <strong>Floristería Colors</strong> te asegura la mayor eficacia y seguridad para tus entregas. 
+                            <strong>Rosas Don Victorio</strong> te asegura la mayor eficacia y seguridad para tus entregas. 
                             </h4>
 
                         </ul>

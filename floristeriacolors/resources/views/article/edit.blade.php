@@ -5,7 +5,7 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">NUEVO POST FLORAL</h4>
-                                  <p class="category">www.floristeriaColors.com</p>
+                                  <p class="category">www.rosasdonvictorio.com</p>
                             </div>
                             <div class="content">
                                 <!-- aqui inicia el formulario de crear nuevo producto -->

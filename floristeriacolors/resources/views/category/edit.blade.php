@@ -7,7 +7,7 @@
     	<div class="card">
         	<div class="header">
             	<h4 class="title">REGISTRAR CATEGORIA</h4>
-            	<p class="category">www.floristeriaColors.com</p>
+            	<p class="category">www.rosasdonvictorio.com</p>
 
         	</div>
         <div class="content">
