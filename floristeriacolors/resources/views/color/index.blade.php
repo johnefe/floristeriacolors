@@ -76,7 +76,7 @@
         <div class="content">
         <script>
     $(document).ready(function(){
-        $('#colors_id').change(function(){
+        $('#color_id').change(function(){
             console.log($(this).val());
             // -------------------------------------
 
@@ -144,8 +144,9 @@
                         <h3>Listas vinculadas</h3>
 
                         {{ Form::open() }}
+                        {{ csrf_field() }}
                         {!!Form::label('Color','Escoge el color:')!!}
-                            {!!Form::select('colors_id',$colors,null,['class'=>'form-control', 'id' =>'colors_id' ])!!}  
+                            {!!Form::select('color_id',$colors,null,['class'=>'form-control', 'id' =>'color_id' ])!!}  
                         <br>
                         {{ Form::close()}}
                         </div>
@@ -192,9 +193,9 @@ function showCheckboxes() {
 
 function validar(obj){
     if(obj.checked==true){
-        var array = {"product_id":parseInt(obj.id),"colors_id":parseInt($( "#colors_id" ).val())}
+        var array = {"product_id":parseInt(obj.id),"color_id":parseInt($( "#color_id" ).val())}
         console.log(obj.id);
-        console.log($( "#colors_id" ).val());
+        console.log($( "#color_id" ).val());
         console.log(array);
         console.log(JSON.stringify(array))
         

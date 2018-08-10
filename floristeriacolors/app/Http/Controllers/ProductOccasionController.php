@@ -52,6 +52,23 @@ class ProductOccasionController extends Controller
         return $productoOcasion;
 
     }
+    public function guardarr(Request $request){
+        //return $request;
+
+        parse_str(file_get_contents("php://input"), $_POST);
+       // return "que";
+        $json = $request->json()->all();
+       /* $json = json_encode($json);
+        $json = json_decode($json,true);*/
+        $productoColor = new ProductColor;
+        $productoColor->product_id = $json["product_id"];
+        $productoColor->color_id =$json["color_id"];
+        $productoColor->save();
+
+
+        return $productoColor;
+
+    }
 
      /**
      * Show the form for creating a new resource.

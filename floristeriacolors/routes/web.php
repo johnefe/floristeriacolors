@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Input;
 use FloristeriaColors\Occasion;
+use FloristeriaColors\Color;
 
 
 /*
@@ -78,6 +79,7 @@ Route::post('/carroVS', 'PrincipalController@cartVS');
 Route::get('/carroVS', 'PrincipalController@getCartVS');
 Route::post('/dataCart', ['as'=> 'dataCart','uses' =>'PrincipalController@dataCart']);
 Route::post('/ocasionproducto', 'ProductOccasionController@guardar');
+
 Route::post('/colorproducto', 'ProductColorController@guardar');
 
 Route::get('/dataCart', 'PrincipalController@getDataCart');

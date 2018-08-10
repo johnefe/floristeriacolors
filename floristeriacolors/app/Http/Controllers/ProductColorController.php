@@ -4,6 +4,9 @@ namespace FloristeriaColors\Http\Controllers;
 
 use Illuminate\Http\Request;
 use FloristeriaColors\Http\Controllers\Controller;
+use FloristeriaColors\Product;
+use FloristeriaColors\ProductColor;
+
 
 class ProductColorController extends Controller
 {
@@ -42,11 +45,11 @@ class ProductColorController extends Controller
         $json = json_decode($json,true);*/
         $productoColor = new ProductColor;
         $productoColor->product_id = $json["product_id"];
-        $productoColor->colors_id =$json["colors_id"];
+        $productoColor->color_id =$json["color_id"];
         $productoColor->save();
 
 
-        return $productoOcasion;
+        return $productoColor;
 
     }
 

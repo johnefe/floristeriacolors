@@ -7,9 +7,9 @@
                                     <li>
                                         <div class="link"><a rel="nofollow" rel="noreferrer" href="/arreglos/destacados/1">Los mas vistos</a></div>
                                     </li>
+                                    
                                     <li >
                                         
-                                    </li>
                                         <div class="link">Por Color<i class="fa fa-chevron-down"></i></div>
                                         <ul class="submenu">
                                             @foreach($colores as $color)
