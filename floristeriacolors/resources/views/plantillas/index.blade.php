@@ -19,10 +19,10 @@
                                      <img src="/img/arreglos/slider/{{$slider->imagen}}" alt="Floristeria Rosas Don Victorio" class="filtro-1">
                                     <!-- -->
                                     <div class="row ">
-                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 text-center" >
+                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center" >
                                             <h3  class="wow slideInLeft animated "><strong>{{$slider->descripcion}}</strong></h3>
                                             <br>
-                                            <div class="col-md-6 col-md-offset-3 col-xs-12 text-center btn-en">
+                                            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12 text-center btn-en">
                                                 <a href="/arreglos" class="btn-entrada text-center"> REALIZA TU ARREGLO FLORAL </a>
                                             </div> <br><br><br><br><br>
                             

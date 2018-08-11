@@ -52,7 +52,7 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $colores= Color::All();
         $masVendidos = Product::limit(6)->get();
-        $sliders = Slider::all();
+        $sliders=Slider::where('ruta', 1)->get();
         $datas = Data::all();
 
 
@@ -70,7 +70,8 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $datas = Data::all();
         $colores = Color::all();
-        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas','colores'));
+        $sliders=Slider::where('ruta', 1)->get();
+        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas','colores','sliders'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -81,7 +82,7 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $datas = Data::all();
         $colores=Color::all();
-        $sliders = Slider::all();
+        $sliders=Slider::where('ruta', 1)->get();
         $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
@@ -164,7 +165,7 @@ class PrincipalController extends Controller
             ->rightJoin('prices','products.id','prices.product_id')
             ->select('products.*')->where('category_type_id', 1)->groupBy('products.id')->get();
         $nombre = "Arreglos";
-        $sliders = Slider::all();
+        $sliders=Slider::where('ruta', 1)->get();
             
         return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores'));
 

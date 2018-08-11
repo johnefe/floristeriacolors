@@ -24,7 +24,6 @@
           <meta name="description" content="Rosas don Victorio, la mejor Floristeria de la ciudad de Pasto. Ofrecemos al público ramos de flores, recoraciones para toda ocasion a un buen precio y una excelente calidad." />
           <meta property="og:title" content="Rosas Don Victorio"/>
           <meta property="og:site_name" content="Rosas Don Victorio"/>
-          <meta property="og:image" content="http://www.rosasdonvictorio.com/img/logo.jpeg"/>
           <meta property="og:type" content="website" />
           <meta content="Rosas don Victorio, la mejor Floristeria de la ciudad de Pasto. Ofrecemos al público ramos de flores, recoraciones para toda ocasion a un buen precio y una excelente calidad." property="og:description" />
           <meta property="description" content="Rosas don Victorio, la mejor Floristeria de la ciudad de Pasto. Ofrecemos al público ramos de flores, recoraciones para toda ocasion a un buen precio y una excelente calidad." />

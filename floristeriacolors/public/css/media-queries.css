@@ -224,7 +224,11 @@ background-position: center top !important;
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 
-
+.logo{
+    width: 200px !important;
+    margin-top:2px !important; 
+    height: 70px
+  }
 /* services */
 
 .service-item {

@@ -1407,6 +1407,13 @@ li.currento{
 
 }
 @media only screen and (max-width : 320px) {
+  .logo{
+    background-color: red !important;
+    width: 100px !important;
+    margin-top:2px !important; 
+    height: 70px
+  }
+
   .sli-container{
     padding-top: 5px;
     width: 100%;

@@ -12,7 +12,7 @@
                     <!-- logo -->
                     <a class="navbar-brand" href="/">
                         <h1 id="logo">
-                            <img src='/img/logo.jpeg' alt="Floristeria Colors" class="img-responsive logo">
+                            <img src='/img/logo.png' alt="Floristeria Colors" class="img-responsive logo">
                         </h1>
                     </a>
                     <!-- /logo -->
