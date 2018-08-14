@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-5 img-arreglo-detalles">
                 <div class="col-md-12">
-                  <img src="/img/arreglos/{{$producto->imagen}}" class="img-responsive">
+                  <img src="/img/arreglos/{{$producto->imagen}}" style="height: 450px;" class="img-responsive">
                   <input type="hidden" id="img" value="{{$producto->imagen}}" name="">
                 </div>
                 
