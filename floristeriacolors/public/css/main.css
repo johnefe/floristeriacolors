@@ -285,8 +285,8 @@ top: -8px;
 
 .features {
   background-color: #fff;
-  padding-top: 1px !important;
   padding-bottom: 10px !important;
+  padding-top:25px !important;
   margin: 0 !important;
 }
 .contenido-categorias p{
@@ -881,7 +881,15 @@ formas de pago
   color: #fff;
 }
 
+/*=========================================
+seccion de categorias en el index
 
+==========================================*/
+
+.section-cat{
+  border-bottom: 2px solid #eee;
+  padding-bottom: 25px !important;
+}
 
 /*=========================================
 	Contact Us

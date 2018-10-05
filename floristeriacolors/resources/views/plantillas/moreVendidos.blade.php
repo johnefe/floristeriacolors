@@ -22,7 +22,7 @@
     <div class="card">
         <div class="header">
             <h4 class="title">MAS VENDIDOS</h4>
-            <p class="category">www.floristeriaColors.com</p>
+            <p class="category">www.rosasdonvictorio.com</p>
         </div>
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">

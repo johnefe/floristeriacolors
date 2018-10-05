@@ -17,6 +17,7 @@ use FloristeriaColors\Cart;
 use FloristeriaColors\Client;
 use FloristeriaColors\Detail;
 use FloristeriaColors\Color;
+use FloristeriaColors\City;
 
 class PrincipalController extends Controller
 {
@@ -28,12 +29,12 @@ class PrincipalController extends Controller
 
     public function index()
     {
-        //$masVendidos = Product::limit(4)->get();
-        $masVendidos = Product::join('best_seller_products','products.id','best_seller_products.product_id')->join('categories', 'categories.id', '=', 'products.category_id')
+        $masVendidos = Product::limit(12)->get();
+       /* $masVendidos = Product::join('best_seller_products','products.id','best_seller_products.product_id')->join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
-                ->where('category_type_id', 1)->groupBy('products.id')->get()->random(4)->all();
-
+                ->where('category_type_id', 1)->groupBy('products.id')->get()->random(8)->all();*/
+       $categories = Category::limit(4)->get();
        $sliders= Slider::where('ruta', 2)->get();
 
        $datas = Data::all();
@@ -51,12 +52,13 @@ class PrincipalController extends Controller
         $categories = Category::where('category_type_id', 1)->get();
         $ocasiones = Occasion::All();
         $colores= Color::All();
+        $ciudades=City::All();
         $masVendidos = Product::limit(6)->get();
         $sliders=Slider::where('ruta', 1)->get();
         $datas = Data::all();
 
 
-        return View('plantillas.realizarArreglo',compact('categories','masVendidos','ocasiones','sliders','datas','colores'));
+        return View('plantillas.realizarArreglo',compact('categories','masVendidos','ocasiones','sliders','datas','colores','ciudades'));
     }
     /**
      * Display a listing of the resource.
@@ -70,8 +72,9 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $datas = Data::all();
         $colores = Color::all();
+        $ciudades=City::All();
         $sliders=Slider::where('ruta', 1)->get();
-        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas','colores','sliders'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','categoria','ocasiones','datas','colores','sliders','ciudades'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -82,6 +85,7 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $datas = Data::all();
         $colores=Color::all();
+        $ciudades=City::All();
         $sliders=Slider::where('ruta', 1)->get();
         $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
@@ -100,7 +104,13 @@ class PrincipalController extends Controller
             $products = $ocasion->products_with_price();
             $nombre = $ocasion->ocasion;
 
-        }else if ($filtro == 'colores'){
+        }else if ($filtro == 'ciudades'){
+            
+            $city = City::find($id);
+            $products = $city->products_with_prices();
+            $nombre = $city->nombre;
+
+         }else if ($filtro == 'colores'){
             
             $color = Color::find($id);
             $products = $color->products_with_prices();
@@ -121,7 +131,7 @@ class PrincipalController extends Controller
 
 
         }
-        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores', 'ciudades'));
 
         
        // return View('plantillas.categoriaSeleccionada');
@@ -141,6 +151,13 @@ class PrincipalController extends Controller
         return $products;
 
     }
+
+    public function city($id){
+        $city = City::find($id);
+        $products = $city->products;
+        return $products;
+    }
+
     public function productos(){
 
         $products = Product::join('categories', 'categories.id', '=', 'products.category_id')
@@ -155,6 +172,7 @@ class PrincipalController extends Controller
         $ocasiones = Occasion::All();
         $datas = Data::all();
         $colores= Color::all();
+        $ciudades= City::all();
          $productosRandom = Product::join('categories', 'categories.id', '=', 'products.category_id')
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
@@ -167,7 +185,7 @@ class PrincipalController extends Controller
         $nombre = "Arreglos";
         $sliders=Slider::where('ruta', 1)->get();
             
-        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores'));
+        return View('plantillas.categoriaSeleccionada',compact('categories','ocasiones','products','nombre','sliders','productosRandom','datas','colores', 'ciudades'));
 
         
        // return View('plantillas.categoriaSeleccionada');

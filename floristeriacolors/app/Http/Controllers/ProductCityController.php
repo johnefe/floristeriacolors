@@ -5,12 +5,13 @@ namespace FloristeriaColors\Http\Controllers;
 use Illuminate\Http\Request;
 use FloristeriaColors\Http\Controllers\Controller;
 use FloristeriaColors\Product;
-use FloristeriaColors\ProductColor;
-use FloristeriaColors\Color;
+use FloristeriaColors\ProductCity;
+use FloristeriaColors\City;
 
-class ProductColorController extends Controller
+class ProductCityController extends Controller
 {
-    /**
+    //
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -20,17 +21,17 @@ class ProductColorController extends Controller
     }*/
     public function index()
     {
-        $colors = Color::All();
-        $colores = Color::pluck('nombre','id');
+        $cities = City::All();
+        $ciudades = City::pluck('nombre','id');
         $products = Product::pluck('nombre','id');
-        return view('color.index',compact('colors','colores','products'));
+        return view('city.index',compact('cities','ciudades','products'));
         
     }
 
 
      public function store(Request $request)
     {   
-        ProductColor::create($request->all());
+        ProductCity::create($request->all());
         return "error";
        // return redirect('/admin/ocasiones')->with('message','Ocasion Guardada con exito');
 
@@ -43,13 +44,13 @@ class ProductColorController extends Controller
         $json = $request->json()->all();
        /* $json = json_encode($json);
         $json = json_decode($json,true);*/
-        $productoColor = new ProductColor;
-        $productoColor->product_id = $json["product_id"];
-        $productoColor->color_id =$json["color_id"];
-        $productoColor->save();
+        $productoCity = new ProductCity;
+        $productoCity->product_id = $json["product_id"];
+        $productoCity->city_id =$json["city_id"];
+        $productoCity->save();
 
 
-        return $productoColor;
+        return $productoCity;
 
     }
 

@@ -5,7 +5,7 @@
       
       <!-- seccion 1  -->
 
-        <section id="facts" class="facts">
+        <section id="facts" class="facts" >
         
                 <div id="myCarousel" class="carousel" data-ride="carousel">
                   <!-- Indicators -->
@@ -57,8 +57,12 @@
         </section><br><br>
 
       <!-- fin seccion 1-->
+@include('plantillas.categoriasindex')
+
+@include('plantillas.enviosnacionales')
 
 @include('layouts.categorias')
+
 
 @include('layouts.trespasos')
 

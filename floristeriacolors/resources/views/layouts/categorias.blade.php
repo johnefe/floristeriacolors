@@ -8,7 +8,7 @@
                     </div>
                     <!-- un arreglo -->
                      @foreach($masVendidos as $producto)
-                     <div class="col-md-3 wow fadeInLeft" data-wow-duration="500ms">      
+                     <div class="col-lg-3 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4 col-xs-10 col-xs-offset-1   wow fadeInLeft" data-wow-duration="500ms">      
                         <div class="service-desc">
                            <img src="/img/arreglos/{{$producto->imagen}}" class="img-responsive">
                               <h3><strong>{{$producto->nombre}}</strong></h3>

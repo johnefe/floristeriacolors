@@ -47,5 +47,9 @@ class Product extends Model
     public function colors(){
         return $this->belongsToMany('FloristeriaColors\Color','product_colors');
     }
+
+    public function cities(){
+        return $this->belongsToMany('FloristeriaColors\City','product_cities');
+    }
     
 }

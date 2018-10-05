@@ -5,6 +5,15 @@
                                         <div class="link"><a rel="nofollow" rel="noreferrer" href="/arreglos">Todos los Arreglos</a></div>
                                     </li>
                                     <li>
+                                        <div class="link">Envíos Nacionales<i class="fa fa-chevron-down"></i></div>
+                                        <ul class="submenu">
+                                            @foreach($ciudades as $ciudad)
+                                                <li><a rel="nofollow" rel="noreferrer" href="/arreglos/ciudades/{{$ciudad->id}}">{{$ciudad->nombre}}</a></li>
+                                            @endforeach 
+                                        </ul>
+                                        
+                                    </li>
+                                    <li>
                                         <div class="link"><a rel="nofollow" rel="noreferrer" href="/arreglos/destacados/1">Los mas vistos</a></div>
                                     </li>
                                     

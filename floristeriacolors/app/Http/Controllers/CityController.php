@@ -3,24 +3,31 @@
 namespace FloristeriaColors\Http\Controllers;
 
 use Illuminate\Http\Request;
-use FloristeriaColors\BestSellerProduct;
+use FloristeriaColors\Http\Controllers\Controller;
+use FloristeriaColors\City;
 use FloristeriaColors\Product;
-use Session;
-use Redirect;
 
-class BestSellerProductController extends Controller
+class CityController extends Controller
 {
+    //
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+        $this->middleware('authAdmin');
+    }
     public function index()
-    {   
-        $mas_vendidos = Product::All();
-        //$mas_vendidos = BestSellerProduct::All();
-        $productos = Product::leftJoin('best_seller_products','products.id','best_seller_products.product_id')->join('categories', 'categories.id', '=', 'products.category_id')->where('category_type_id', 1)->whereNull('best_seller_products.product_id')->pluck('nombre','products.id');
-            return view('plantillas.moreVendidos',compact('mas_vendidos','productos'));
+    {
+        $ciudades = City::All();
+        $cities = City::pluck('nombre','id');
+        $products = Product::join('categories', 'categories.id', '=', 'products.category_id')
+            ->select('products.*')->where('category_type_id', 1)->get();
+            
+        return view('city.index',compact('ciudades','cities','products'));
+        
     }
 
     /**
@@ -41,8 +48,9 @@ class BestSellerProductController extends Controller
      */
     public function store(Request $request)
     {
-         BestSellerProduct::create($request->all());
-        return redirect('/admin/mas_vendidos')->with('message','Guardado con exito');
+        Color::create($request->all());
+        return redirect('/admin/ciudades')->with('message','Ciudad Guardada con exito');
+
     }
 
     /**
@@ -64,7 +72,7 @@ class BestSellerProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -76,7 +84,13 @@ class BestSellerProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ciudad = City::find($id);
+        $ciudad->fill($request->all());
+        $ciudad->save();
+
+        Session::flash('message','Ciudad Editada correctamente');
+
+        return Redirect::to('/admin/ciudades');
     }
 
     /**
@@ -88,13 +102,13 @@ class BestSellerProductController extends Controller
     public function destroy($id)
     {
         try {
-                BestSellerProduct::destroy($id);
-                Session::flash('message','Producto eliminado correctamente');
-                return Redirect::to('/admin/mas_vendidos');
+                City::destroy($id);
+                Session::flash('message','Ciudad eliminada correctamente');
+                return Redirect::to('/admin/ciudades');
 
             } catch (\Illuminate\Database\QueryException $e) {
-                Session::flash('error','No se puede eliminar ');
-                return Redirect::to('/admin/mas_vendidos');
+                Session::flash('error','No se puede eliminar por que tiene productos asignados');
+                return Redirect::to('/admin/ciudades');
 
             } 
     }
