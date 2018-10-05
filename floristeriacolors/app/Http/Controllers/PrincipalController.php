@@ -34,13 +34,14 @@ class PrincipalController extends Controller
                 ->rightJoin('prices','products.id','prices.product_id')
                 ->select('products.*')
                 ->where('category_type_id', 1)->groupBy('products.id')->get()->random(8)->all();*/
-       $categories = Category::limit(4)->get();
-       $sliders= Slider::where('ruta', 2)->get();
+        $ciudades = City::limit(2)->get();
+        $categories = Category::limit(4)->get();
+        $sliders= Slider::where('ruta', 2)->get();
 
-       $datas = Data::all();
+        $datas = Data::all();
 
 
-        return View('plantillas.index',compact('categories','masVendidos','sliders','datas'));
+        return View('plantillas.index',compact('categories','masVendidos','sliders','datas','ciudades'));
     }
     /**
      * Display a listing of the resource.
