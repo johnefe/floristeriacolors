@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Floristeria Colors Administrador
+                        Rosas Don Victorio Administrador
                     </a>
                 </div>
 

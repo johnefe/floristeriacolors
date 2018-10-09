@@ -23,7 +23,7 @@
                     <ul  class="nav navbar-nav">
                         <li class="current"><a href="/">Inicio</a></li>
                         <li class="current"><a href="/blog">Nuestro Blog</a></li>
-                        <li class="current"><a href="/arbolesMemorales">Arboles Memorales</a></li>  
+                        <li class="current"><a href="/arbolesMemorales">Arboles Memoriales</a></li>  
                          <li class="current"><a href="/conocenos">Conócenos</a></li>
                         <li><a href="/ayuda">Ayuda</a></li>
                         <li><a href="/contacto">Contáctanos</a></li>

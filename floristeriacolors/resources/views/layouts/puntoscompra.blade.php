@@ -25,7 +25,7 @@
                     </div>
 
                      <div class="col-md-4 flores2 " >
-                       <h4 class="text-center"><a href="/arbolesMemorales">PLANTA UN ÁRBOL MEMORAL</a> </h4>
+                       <h4 class="text-center"><a href="/arbolesMemorales">PLANTA UN ÁRBOL MEMORIAL</a> </h4>
                        <img src="/img/arbol.png" class="img-responsive ">
                     </div>
                     

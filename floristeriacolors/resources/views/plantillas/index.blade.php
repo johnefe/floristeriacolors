@@ -74,14 +74,6 @@
                     <div class="col-md-6 col-md-offset-3">
                         <img src="img/medios.png" class="img-responsive">
                     </div>
-                    <!--<div class="col-md-5 newsletter">
-                        <h3>NEWSLETTER</h3>
-                        <p>
-                            Suscribete a nuestro newsletter y recibe importantes descuentos!
-                        </p><br>
-                        <input type="text" name="" placeholder="Tu correo electrónico">
-                        <button class="btnsusc">Suscribirse</button>
-                    </div>-->
                 </div>
             </div>
 
@@ -108,7 +100,7 @@
                     <div class="item active">
                         <div class="carousel-caption">
                             <h5 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">¿QUE OPINAN NUESTROS CLIENTES?<span></span></h5>
-                            <h3 data-wow-duration="1000ms" class="wow slideInLeft animated texto">Floristería Colors tiene todo lo que tu deseas expresar, con su gran variedad de productos he logrado sorprender a mis seres queridos. Gracias a FLoristería Colors por brindar productos de excelente calidad.</h3>
+                            <h3 data-wow-duration="1000ms" class="wow slideInLeft animated texto">Rosas Don Victorio tiene todo lo que tu deseas expresar, con su gran variedad de productos he logrado sorprender a mis seres queridos. Gracias a Rosas Don Victorio por brindar productos de excelente calidad.</h3>
                             <p data-wow-duration="1000ms" class="wow slideInRight animated">Juan Carlos Pantoja</p>
                         </div>
                     </div>
@@ -126,7 +118,7 @@
                     <div class="item">
                         <div class="carousel-caption">
                             <h5 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">¿QUE OPINAN NUESTROS CLIENTES?<span></span></h5>
-                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated texto">Encantada con los arreglos florales que compre para el dia de la mujer, son muy hermosos y llegaron a mis destinatarias en muy buenas condiciones y a la hora acordada. Gracias FLoristería Colors.</h3>
+                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated texto">Encantada con los arreglos florales que compre para el dia de la mujer, son muy hermosos y llegaron a mis destinatarias en muy buenas condiciones y a la hora acordada. Gracias Rosas Don Victorio.</h3>
                             <p data-wow-duration="500ms" class="wow slideInRight animated">Luisa Fernanda Muñoz</p>
                         </div>
                     </div>

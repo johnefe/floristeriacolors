@@ -1,8 +1,8 @@
 <!-- categorias en el incio de la app-->
             <section id="" class="section-cat">
                 <div class="container">
-                    <div class="row titulo-pasos" >
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="row titulo-cat" >
+                        <div class="col-md-8 col-md-offset-2">
                             <h2>CATEGORÍAS</h2><br>
                         </div>
                     <!-- inicio categorias-->
@@ -11,15 +11,10 @@
                        
 
                         <!-- -->
-                        <div class="col-md-3 puntos-win">
-                        <div class="devider1 text-center">
-                            <span class="fa fa-star fa-2x"></span>
-                            <span class="fa fa-star fa-2x"></span>
-                        </div>
+                        <div class="col-md-3 col-md-6 col-md-offset-0 col-xs-6 col-xs-offset-3 puntos-win">
+                        
                         <div class="win text-center">
-                             <p>
-                            Con <strong>Rosas Don Victorio</strong> Ganas Puntos en cada compra que realices y puedes utilizalos <h5>para pagar tus proximos arreglos.!</h5>
-                        </p>
+                            <img class="img-category" src="/img/categorias/{{$categoria->img}}">
                             <a href="/arreglos/categorias/{{$categoria->id}}" class="ver-info-puntos form-control">{{$categoria->name}}</a>
                         </div>
                        

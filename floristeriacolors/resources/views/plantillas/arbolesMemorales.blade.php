@@ -6,7 +6,7 @@
     <div class="container ">
         <div class="row">
             <div class="col-md-10 col-md-offset-1 text-center titulo-memoral" >
-                <h3>ÁRBOLES MEMORALES</h3>
+                <h3>ÁRBOLES MEMORIALES</h3>
             </div>
         </div>
         <div class="row  texto-memoral">

@@ -576,6 +576,13 @@ padding:10px 0;
   font-weight: bold;
   text-align: center;
 }
+
+.titulo-cat h2{
+  color: #f49c0b;
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+}
 .trespasos-member h5 {
   font-size: 14px;
   line-height: 24px;
@@ -641,10 +648,16 @@ formas de pago
 
 .devider1:before,
 .devider1:after {
-  content: "____________";
+  content: "________________";
   color: #f49c0b;
   position: relative;
   bottom: 7px;
+}
+
+.img-category{
+  width: 100%;
+  max-height: 200px;
+
 }
 
 .devider1:before {
@@ -655,14 +668,17 @@ formas de pago
   left: 10px;
 }
 .win{
+  padding: 5px;
+  padding-top: 10px;
   width: 100%;
-  
+  border-top: 1px solid #f49c0b;
   border-bottom: 1px solid #f49c0b;
   border-left: 1px solid #f49c0b;
   border-right: 1px solid #f49c0b;
 }
 .puntos-win{
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 .puntos-win:hover{
   background-color: rgba(0,0,0,0.1);

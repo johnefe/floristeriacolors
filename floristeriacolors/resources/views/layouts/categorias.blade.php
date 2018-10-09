@@ -42,7 +42,7 @@
                         </div>
                        
                     <div class="col-md-12 text-center">
-                     <hr><h3>"Con Floristería Colors expresas tus sentimientos."</h3><hr>
+                     <hr><h3>"Con Rosas Don Victorio expresas tus sentimientos."</h3><hr>
                     </div>
                 </div>
             </div>

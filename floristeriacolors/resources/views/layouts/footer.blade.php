@@ -43,7 +43,7 @@
                             <h6>Tu cuenta</h6>
                             <ul>
                                 <li><a href="/cuentaUsuario">Mi cuenta</a></li>
-                                <li><a href="/arbol">Arbol memorales</a></li>
+                                <li><a href="/arbol">Arboles memoriales</a></li>
                                 
                             </ul>
                         </div>

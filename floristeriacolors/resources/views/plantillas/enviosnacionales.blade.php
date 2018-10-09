@@ -12,13 +12,16 @@
                         @foreach($ciudades as $ciudad)
                         <div class="col-md-6  trespasos-member text-center">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <span class="fa fa-shopping-basket fa-4x"></span>
-                                </div>
-                                
+                                <a href="/arreglos/ciudades/{{$ciudad->id}}">
+                                    <div class="col-md-12">
+                                        <span class="fa fa-building fa-4x"></span>
+                                    </div>
+                                    <strong>{{$ciudad->nombre}}</strong>
+                                </a>
+
                             </div>
                             
-                            <h5>{{$ciudad->nombre}}</h5>
+                            
                         </div>
                         @endforeach
                         <!-- -->
