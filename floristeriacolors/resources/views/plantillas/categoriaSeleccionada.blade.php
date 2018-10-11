@@ -51,24 +51,19 @@
                      <div class="col-md-12">
                           <div class="row ordenar-arreglos">
                             <div class="col-md-7">
-                                <h5><strong>Floristeria Colors</strong>/{{$nombre}}</h5>
+                                <h5><strong>Rosas Don Victorio</strong>/{{$nombre}}</h5>
                             </div>
-                            <!--
-                            <div class="col-md-5">
-                                <h5><strong>Ordenar por: </strong><a href="">Todos</a>|<a href="">Menos precio</a>|<a href="">Mayor precio</a></h5>
-                            </div>
-                            -->
-                            
+                                                       
                           </div>
                      </div>
-                    <div class=" row col-md-12">
+                    <div class=" row">
                        <!--listado de arreglos de la categoria seleccionada -->
 
                             <!-- un arreglo -->
 
                             @foreach($products as $product)
                              <!-- un arreglo -->
-                              <div class="col-md-3 wow fadeInLeft" data-wow-duration="500ms">      
+                              <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2 wow fadeInLeft" data-wow-duration="500ms">      
                                   <div class="service-desc text-center">
                                     <img src="/img/arreglos/{{$product->imagen}}" class="img-responsive">
                                           <h3><strong>{{$product->nombre}}</strong> </h3>
@@ -79,19 +74,15 @@
                                           @else
                                             <h3>${{number_format($product->prices->first()->precio)}}</h3>
                                           @endif  
-                                         
-
+                                      
                                       <div class="ver-boton">
                                          <a href="/arregloSeleccionado/{{$product->id}}" class="btn-ver form-control">VER</a>
                                       </div>  
                                   </div>
-                                  
                               </div>
                             <!-- fin un arreglo -->
 
-                             @endforeach
-                           
-                           
+                             @endforeach          
                     <!--fin listado de arreglos de la categoria seleccionada  -->
                     </div>
                                          
@@ -121,10 +112,9 @@
     <div class="features">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
                 @foreach($productosRandom as $productoRandom)
                  <!-- un arreglo -->
-                    <div class="col-md-3 wow fadeInLeft" data-wow-duration="500ms">      
+                    <div class="col-md-3 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2 wow fadeInLeft" data-wow-duration="500ms">      
                         <div class="service-desc">
                            <img src="/img/arreglos/{{$productoRandom->imagen}}" class="img-responsive">
                               <h3><strong>{{$productoRandom->nombre}}</strong></h3>
@@ -137,10 +127,6 @@
                     </div>
                   <!-- fin un arreglo -->
                 @endforeach
-                 
-                   
-                                         
-                </div>
             </div>
         </div>
     </div>

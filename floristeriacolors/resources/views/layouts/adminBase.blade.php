@@ -90,6 +90,14 @@
                             </a>
                         </div>
                     </li>
+                     <li>
+                        <div class="link linkito">
+                            <a href="/admin/ciudades">
+                                <i class="fa fa-building fa-1x"></i>
+                                CIUDADES
+                            </a>
+                        </div>
+                    </li>
                     <li>
                         <div class="link linkito">
                             <a href="/admin/mas_vendidos">

@@ -45,6 +45,7 @@ Route::resource('admin/clientes','ClientController');
 Route::resource('admin/datos','DataController');
 Route::resource('admin/ocasiones','OccasionController');
 Route::resource('admin/colores','ColorController');
+Route::resource('admin/ciudades','CityController');
 //Route::resource('admin/productosOcasiones','ProductOccasionController');
 Route::resource('admin/articulos','ArticleController');
 Route::resource('admin/multimedia','VideoController');
@@ -74,6 +75,8 @@ Route::get('/cuentaUsuario', 'CuentaController@index');
 
 Route::get('/dropdown/{id}', 'PrincipalController@dropdown');
 Route::get('/colores/{id}',  'PrincipalController@color');
+Route::get('/ciudades/{id}',  'PrincipalController@city');
+
 Route::get('/productos', 'PrincipalController@productos');
 Route::post('/carroVS', 'PrincipalController@cartVS');
 Route::get('/carroVS', 'PrincipalController@getCartVS');
@@ -81,6 +84,7 @@ Route::post('/dataCart', ['as'=> 'dataCart','uses' =>'PrincipalController@dataCa
 Route::post('/ocasionproducto', 'ProductOccasionController@guardar');
 
 Route::post('/colorproducto', 'ProductColorController@guardar');
+Route::post('/cityproducto', 'ProductCityController@guardar');
 
 Route::get('/dataCart', 'PrincipalController@getDataCart');
 
